@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{{ SITE_SETTINGS.meta_desc|default:'' }}">
+  <meta name="keywords" content="{{ SITE_SETTINGS.meta_key|default:'' }}">
+  <title>{{ SITE_SETTINGS.title|default:'Site Name' }}</title>
+  <script src="{{ STATIC_URL }}js/lib/jquery-1.11.2.min.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.validate.js"></script>
+  <script src="{{ STATIC_URL }}js/lib/jquery.form.js"></script>
+  <script src="{{ STATIC_URL }}js/common.js"></script>
+  <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+  {% if SITE_SETTING %}
+    {{ SITE_SETTINGS.top_js|safe }}
+  {% endif %}
+</head>
+<body>
+<h1>Hello!</h1>
+{% if SITE_SETTING %}
+  {{ SITE_SETTINGS.bottom_js|safe }}
+{% endif %}
+</body>
+</html>
